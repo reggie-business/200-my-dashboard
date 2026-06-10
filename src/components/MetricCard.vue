@@ -21,19 +21,27 @@ const { label, value, note } = props;
 <style scoped>
 .metric-card {
   padding: 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,0,150,0.12);
+  box-shadow: 0 6px 20px rgba(255,0,150,0.06), 0 0 18px rgba(0,200,255,0.04) inset;
 }
 .metric-label {
   margin: 0;
-  color: #6b7280;
+  color: #f3eaff;
   font-size: 0.95rem;
+  letter-spacing: 0.06em;
 }
 .metric-value {
-  margin: 0.75rem 0 0;
-  font-size: 2rem;
-  font-weight: 700;
+  margin: 0.5rem 0 0;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(255,0,150,0.12);
+  font-family: 'Metal Mania', 'Orbitron', sans-serif;
 }
 .metric-note {
-  margin: 0.75rem 0 0;
-  color: #475569;
+  margin: 0.5rem 0 0;
+  color: #cbd5e1;
+  font-size: 0.85rem;
 }
 </style>
