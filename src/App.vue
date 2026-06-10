@@ -27,6 +27,7 @@ body {
   --muted: #5f6f88;
   --accent: #1565c0;
   --focus: #1565c0;
+  --on-dark-text: #f8fbff;
   --surface-contrast: rgba(16, 39, 67, 0.06);
   --card-border: #dbe3ee;
   --radius: 12px;

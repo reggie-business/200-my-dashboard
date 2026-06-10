@@ -68,14 +68,19 @@ const trendIcon = computed(() => {
 <style scoped>
 .metric-card {
   padding: 0;
-  background: #ffffff;
-  border: 1px solid #dde5ee;
+  background: linear-gradient(180deg, #1c2028 0%, #151922 100%);
+  border: 1px solid #2d3442;
   border-radius: calc(var(--radius) - 4px);
-  box-shadow: 0 4px 14px rgba(17, 26, 43, 0.08);
+  box-shadow: 0 6px 18px rgba(17, 26, 43, 0.2);
+}
+
+.metric-card :deep(.v-card) {
+  background: transparent;
+  color: #f7fbff;
 }
 .metric-label {
   margin: 0;
-  color: #5a6880;
+  color: #c7d3e8;
   font-size: 0.9rem;
   letter-spacing: 0.03em;
   font-weight: 600;
@@ -84,7 +89,7 @@ const trendIcon = computed(() => {
   margin: 0.5rem 0 0;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #0d223d;
+  color: #f7fbff;
   font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
 }
 
@@ -96,13 +101,13 @@ const trendIcon = computed(() => {
 }
 .metric-note {
   margin: 0;
-  color: #5a6880;
+  color: #d3ddef;
   font-size: 0.88rem;
 }
 
 .metric-empty {
   margin: 0.5rem 0 0;
-  color: #7c8aa0;
+  color: #d3ddef;
   font-size: 0.84rem;
 }
 

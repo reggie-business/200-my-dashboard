@@ -152,6 +152,10 @@ const refreshSnapshot = () => {
   border-bottom: 1px solid #e0e6f0;
 }
 
+.dashboard-main {
+  padding-top: 84px;
+}
+
 .bar-content {
   width: 100%;
   display: flex;
@@ -196,14 +200,19 @@ h1.brand {
 .section-card {
   min-height: 250px;
   border-radius: var(--radius);
-  border: 1px solid #dbe3ee;
-  box-shadow: 0 6px 18px rgba(17, 26, 43, 0.08);
+  border: 1px solid #2d3442;
+  background: linear-gradient(180deg, #1c2028 0%, #151922 100%);
+  box-shadow: 0 8px 20px rgba(17, 26, 43, 0.22);
 }
 
 .section-title {
-  color: #102743;
+  color: #f1f6ff;
   font-weight: 700;
   font-size: 1rem;
+}
+
+.section-card :deep(.v-card-text) {
+  color: #d3ddef;
 }
 
 .placeholder-block {
@@ -228,28 +237,68 @@ h1.brand {
   background: transparent;
 }
 
+.section-card :deep(.v-list-item-title) {
+  color: #f1f6ff;
+}
+
+.section-card :deep(.v-list-item-subtitle) {
+  color: #c7d3e8;
+  opacity: 1;
+}
+
 .empty-state {
   min-height: 120px;
-  border: 1px dashed #c8d5e7;
+  border: 1px dashed #3e4657;
   border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6c7e96;
+  color: #d3ddef;
   font-size: 0.9rem;
 }
 
 .region-table {
-  border: 1px solid #e3eaf5;
+  border: 1px solid #4a5468;
   border-radius: 8px;
 }
 
+.region-table :deep(th),
+.region-table :deep(td) {
+  color: #f1f6ff;
+}
+
+.region-table :deep(thead th) {
+  font-weight: 700;
+}
+
+.region-table :deep(tr:not(:last-child) td),
+.region-table :deep(tr:not(:last-child) th) {
+  border-bottom: 1px solid rgba(199, 211, 232, 0.18) !important;
+}
+
 .trend-text {
-  color: #4c5e79;
+  color: #d3ddef;
   font-size: 0.92rem;
 }
 
+:deep(.v-btn.v-btn--variant-flat.v-btn--color-primary),
+:deep(.v-btn.v-btn--variant-elevated.v-btn--color-primary),
+:deep(.v-btn-toggle .v-btn.v-btn--selected) {
+  color: var(--on-dark-text) !important;
+}
+
+:deep(.v-btn.v-btn--variant-flat.v-btn--color-primary .v-icon),
+:deep(.v-btn.v-btn--variant-elevated.v-btn--color-primary .v-icon),
+:deep(.v-btn-toggle .v-btn.v-btn--selected .v-icon) {
+  color: var(--on-dark-text) !important;
+}
+
 @media (max-width: 960px) {
+  .dashboard-main {
+    padding-top: 96px;
+  }
+
   .bar-content {
     align-items: flex-start;
     flex-direction: column;
