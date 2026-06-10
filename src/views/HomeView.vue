@@ -1,7 +1,7 @@
 <template>
-  <v-main class="dashboard">
+  <v-main id="main-content" class="dashboard">
     <v-container fluid>
-      <v-sheet class="header-sheet mb-10" elevation="2" rounded>
+      <v-sheet class="header-sheet mb-10" elevation="2" rounded role="banner" aria-label="Application header">
         <div class="header-content">
           <div>
             <p class="eyebrow">FastForward Logistics</p>
@@ -14,41 +14,41 @@
       </v-sheet>
 
       <v-row class="metrics-row" dense>
-        <v-col cols="12" md="3" v-for="metric in metrics" :key="metric.label">
-          <MetricCard :label="metric.label" :value="metric.value" :note="metric.note" />
+        <v-col cols="12" md="3" v-for="(metric, index) in metrics" :key="metric.label">
+          <MetricCard :label="metric.label" :value="metric.value" :note="metric.note" :heading-id="`metric-${index}`" />
         </v-col>
       </v-row>
 
       <v-row dense>
         <v-col cols="12" md="8">
-          <v-card elevation="1" rounded class="section-card">
-            <v-card-title>Shipment Volume</v-card-title>
+          <v-card elevation="1" rounded class="section-card" role="region" aria-labelledby="shipment-volume-title">
+            <v-card-title id="shipment-volume-title">Shipment Volume</v-card-title>
             <v-card-text>
-              <div class="placeholder">Chart placeholder</div>
+              <div class="placeholder" aria-hidden="true">Chart placeholder</div>
             </v-card-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
-          <v-card elevation="1" rounded class="section-card">
-            <v-card-title>Open Exceptions</v-card-title>
+          <v-card elevation="1" rounded class="section-card" role="region" aria-labelledby="open-exceptions-title">
+            <v-card-title id="open-exceptions-title">Open Exceptions</v-card-title>
             <v-card-text>
-              <div class="placeholder">Table placeholder</div>
+              <div class="placeholder" aria-hidden="true">Table placeholder</div>
             </v-card-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="8">
-          <v-card elevation="1" rounded class="section-card">
-            <v-card-title>Regional Performance</v-card-title>
+          <v-card elevation="1" rounded class="section-card" role="region" aria-labelledby="regional-performance-title">
+            <v-card-title id="regional-performance-title">Regional Performance</v-card-title>
             <v-card-text>
-              <div class="placeholder">Map / summary placeholder</div>
+              <div class="placeholder" aria-hidden="true">Map / summary placeholder</div>
             </v-card-text>
           </v-card>
         </v-col>
         <v-col cols="12" md="4">
-          <v-card elevation="1" rounded class="section-card">
-            <v-card-title>On-Time Delivery Trend</v-card-title>
+          <v-card elevation="1" rounded class="section-card" role="region" aria-labelledby="otd-trend-title">
+            <v-card-title id="otd-trend-title">On-Time Delivery Trend</v-card-title>
             <v-card-text>
-              <div class="placeholder">Trend chart placeholder</div>
+              <div class="placeholder" aria-hidden="true">Trend chart placeholder</div>
             </v-card-text>
           </v-card>
         </v-col>

@@ -1,11 +1,18 @@
 <template>
-  <v-card elevation="1" rounded class="metric-card">
-    <v-card-text>
-      <p class="metric-label">{{ label }}</p>
-      <p class="metric-value">{{ value }}</p>
-      <p v-if="note" class="metric-note">{{ note }}</p>
-    </v-card-text>
-  </v-card>
+  <section
+    class="metric-card"
+    role="region"
+    :aria-labelledby="headingId"
+    tabindex="0"
+  >
+    <v-card elevation="0" flat>
+      <v-card-text>
+        <h3 :id="headingId" class="metric-label">{{ label }}</h3>
+        <p class="metric-value">{{ value }}</p>
+        <p v-if="note" class="metric-note">{{ note }}</p>
+      </v-card-text>
+    </v-card>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -13,9 +20,10 @@ const props = defineProps<{
   label: string;
   value: string;
   note?: string;
+  headingId?: string;
 }>();
 
-const { label, value, note } = props;
+const { label, value, note, headingId = `metric-${Math.random().toString(36).substr(2,6)}` } = props;
 </script>
 
 <style scoped>
