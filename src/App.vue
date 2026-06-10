@@ -12,23 +12,23 @@ body,
 #app {
   margin: 0;
   min-height: 100%;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: radial-gradient(ellipse at top left, #071022 0%, #0b1224 35%, #061021 100%);
+  font-family: 'IBM Plex Sans', 'Segoe UI', Tahoma, sans-serif;
+  background: #f3f6fb;
   color: var(--text);
 }
 body {
-  background: radial-gradient(ellipse at top left, #071022 0%, #0b1224 35%, #061021 100%);
+  background: #f3f6fb;
 }
 
 :root {
-  --bg: #071022;
-  --card-bg: #0b1224;
-  --text: #E6EEF8;
-  --muted: #9fb3c8;
-  --accent: #ff4fa3;
-  --focus: #00e5ff;
-  --surface-contrast: rgba(255,255,255,0.06);
-  --card-border: rgba(255,255,255,0.06);
+  --bg: #f3f6fb;
+  --card-bg: #ffffff;
+  --text: #102743;
+  --muted: #5f6f88;
+  --accent: #1565c0;
+  --focus: #1565c0;
+  --surface-contrast: rgba(16, 39, 67, 0.06);
+  --card-border: #dbe3ee;
   --radius: 12px;
   --base-line-height: 1.45;
   --base-font-size: 16px;
@@ -49,7 +49,7 @@ body {
   height: auto;
   padding: 0.5rem 1rem;
   background: var(--accent);
-  color: var(--bg);
+  color: #ffffff;
   z-index: 9999;
   border-radius: 4px;
 }

@@ -9,53 +9,105 @@
       <v-card-text>
         <h3 :id="headingId" class="metric-label">{{ label }}</h3>
         <p class="metric-value">{{ value }}</p>
-        <p v-if="note" class="metric-note">{{ note }}</p>
+        <div class="metric-trend" v-if="trendText">
+          <v-icon
+            :icon="trendIcon"
+            :color="trendColor"
+            size="18"
+            class="metric-trend-icon"
+            aria-hidden="true"
+          />
+          <p class="metric-note">{{ trendText }}</p>
+        </div>
+        <p v-else class="metric-empty">No trend data available</p>
       </v-card-text>
     </v-card>
   </section>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
+
 const props = defineProps<{
   label: string;
   value: string;
-  note?: string;
+  trendValue?: string;
+  trendDirection?: 'up' | 'down' | 'flat';
   headingId?: string;
 }>();
 
-const { label, value, note, headingId = `metric-${Math.random().toString(36).substr(2,6)}` } = props;
+const {
+  label,
+  value,
+  trendValue,
+  trendDirection = 'flat',
+  headingId = `metric-${Math.random().toString(36).slice(2, 8)}`
+} = props;
+
+const trendText = computed(() => {
+  if (!trendValue) return '';
+
+  if (trendDirection === 'up') return `${trendValue} increase`;
+  if (trendDirection === 'down') return `${trendValue} decrease`;
+  return `${trendValue} unchanged`;
+});
+
+const trendColor = computed(() => {
+  if (trendDirection === 'up') return 'success';
+  if (trendDirection === 'down') return 'error';
+  return 'info';
+});
+
+const trendIcon = computed(() => {
+  if (trendDirection === 'up') return 'mdi-arrow-up-thin';
+  if (trendDirection === 'down') return 'mdi-arrow-down-thin';
+  return 'mdi-arrow-right-thin';
+});
 </script>
 
 <style scoped>
 .metric-card {
-  padding: 1rem;
-  background: linear-gradient(180deg, var(--card-bg), rgba(11,18,36,0.92));
-  border: 1px solid var(--card-border);
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid #dde5ee;
   border-radius: calc(var(--radius) - 4px);
-  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+  box-shadow: 0 4px 14px rgba(17, 26, 43, 0.08);
 }
 .metric-label {
   margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
+  color: #5a6880;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  font-weight: 600;
 }
 .metric-value {
   margin: 0.5rem 0 0;
-  font-size: 1.9rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  color: var(--text);
-  text-shadow: none;
-  font-family: Inter, 'Orbitron', sans-serif;
+  color: #0d223d;
+  font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+}
+
+.metric-trend {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 .metric-note {
-  margin: 0.5rem 0 0;
-  color: var(--muted);
+  margin: 0;
+  color: #5a6880;
   font-size: 0.88rem;
 }
 
+.metric-empty {
+  margin: 0.5rem 0 0;
+  color: #7c8aa0;
+  font-size: 0.84rem;
+}
+
 .metric-card:focus-visible {
-  outline: 3px solid var(--focus);
+  outline: 3px solid #1565c0;
   outline-offset: 3px;
 }
 </style>
