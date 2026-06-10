@@ -5,7 +5,7 @@
         <div class="header-content">
           <div>
             <p class="eyebrow">FastForward Logistics</p>
-            <h1 class="chrome">Executive Operations Dashboard</h1>
+            <h1 class="brand">Executive Operations Dashboard</h1>
           </div>
           <div class="header-meta">
             <p>Last updated: Today</p>
@@ -90,26 +90,20 @@ const metrics = [
 .eyebrow {
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #55607b;
+  letter-spacing: 0.12em;
+  color: var(--muted);
   font-size: 0.85rem;
+  font-weight: 600;
 }
 
-h1 {
-  margin: 0.35rem 0 0;
-  font-size: 2.2rem;
+h1.brand {
+  margin: 0.25rem 0 0;
+  font-size: 1.9rem;
+  line-height: 1.05;
   font-weight: 700;
-}
-
-.chrome {
-  font-family: 'Metal Mania', 'Orbitron', sans-serif;
-  font-weight: 700;
-  font-size: 2.6rem;
-  background: linear-gradient(90deg, #fff, #ffd700, #ff0080, #7efff5);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6), 0 0 12px rgba(255,0,150,0.35);
+  color: var(--text);
+  font-family: 'Orbitron', Inter, sans-serif;
+  text-shadow: 0 1px 3px rgba(2,6,23,0.6);
 }
 
 .header-meta {
@@ -122,46 +116,51 @@ h1 {
 
 .metric-label {
   margin: 0;
-  color: #6b7280;
+  color: var(--muted);
   font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .metric-value {
-  margin: 0.75rem 0 0;
-  font-size: 2rem;
+  margin: 0.5rem 0 0;
+  font-size: 1.9rem;
   font-weight: 700;
+  color: var(--text);
 }
 
 .metric-note {
-  margin: 0.75rem 0 0;
-  color: #475569;
+  margin: 0.5rem 0 0;
+  color: var(--muted);
 }
 
 .section-card {
-  min-height: 280px;
+  min-height: 260px;
+  background: linear-gradient(180deg, var(--card-bg), rgba(11,18,36,0.92));
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
 }
 .header-sheet {
-  background: linear-gradient(135deg, rgba(255,0,150,0.08), rgba(0,200,255,0.06));
-  border: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(135deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+  border: 1px solid var(--card-border);
 }
 
 .v-card.section-card {
-  background: linear-gradient(180deg, rgba(20,8,40,0.6), rgba(10,6,25,0.6));
-  border: 1px solid rgba(126,0,255,0.12);
-  box-shadow: 0 6px 30px rgba(126,0,255,0.08);
+  background: linear-gradient(180deg, var(--card-bg), rgba(11,18,36,0.92));
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.4);
 }
 
 .header-meta {
-  color: #cbd5e1;
+  color: var(--muted);
 }
 .placeholder {
-  min-height: 220px;
-  border-radius: 0.75rem;
-  background: #eef2ff;
+  min-height: 200px;
+  border-radius: 0.5rem;
+  background: rgba(255,255,255,0.02);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4338ca;
+  color: var(--muted);
   font-weight: 600;
 }
 

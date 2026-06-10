@@ -12,21 +12,26 @@ body,
 #app {
   margin: 0;
   min-height: 100%;
-  font-family: 'Orbitron', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: radial-gradient(ellipse at top left, #0f0326 0%, #1b052f 35%, #120824 100%);
-  color: #f3f0ff;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(ellipse at top left, #071022 0%, #0b1224 35%, #061021 100%);
+  color: var(--text);
 }
 body {
-  background: radial-gradient(ellipse at top left, #0f0326 0%, #1b052f 35%, #120824 100%);
+  background: radial-gradient(ellipse at top left, #071022 0%, #0b1224 35%, #061021 100%);
 }
 
 :root {
-  --bg: #0f0326;
-  --card-bg: #0b0a12;
-  --text: #ffffff;
-  --muted: #cbd5e1;
-  --accent: #ff0080;
-  --focus: #00fff0;
+  --bg: #071022;
+  --card-bg: #0b1224;
+  --text: #E6EEF8;
+  --muted: #9fb3c8;
+  --accent: #ff4fa3;
+  --focus: #00e5ff;
+  --surface-contrast: rgba(255,255,255,0.06);
+  --card-border: rgba(255,255,255,0.06);
+  --radius: 12px;
+  --base-line-height: 1.45;
+  --base-font-size: 16px;
 }
 
 .skip-link {

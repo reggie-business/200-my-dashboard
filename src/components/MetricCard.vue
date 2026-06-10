@@ -29,27 +29,33 @@ const { label, value, note, headingId = `metric-${Math.random().toString(36).sub
 <style scoped>
 .metric-card {
   padding: 1rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,0,150,0.12);
-  box-shadow: 0 6px 20px rgba(255,0,150,0.06), 0 0 18px rgba(0,200,255,0.04) inset;
+  background: linear-gradient(180deg, var(--card-bg), rgba(11,18,36,0.92));
+  border: 1px solid var(--card-border);
+  border-radius: calc(var(--radius) - 4px);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
 }
 .metric-label {
   margin: 0;
-  color: #f3eaff;
+  color: var(--muted);
   font-size: 0.95rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 .metric-value {
   margin: 0.5rem 0 0;
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(255,0,150,0.12);
-  font-family: 'Metal Mania', 'Orbitron', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--text);
+  text-shadow: none;
+  font-family: Inter, 'Orbitron', sans-serif;
 }
 .metric-note {
   margin: 0.5rem 0 0;
-  color: #cbd5e1;
-  font-size: 0.85rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.metric-card:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
 }
 </style>
