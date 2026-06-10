@@ -15,13 +15,7 @@
 
       <v-row class="metrics-row" dense>
         <v-col cols="12" md="3" v-for="metric in metrics" :key="metric.label">
-          <v-card elevation="1" rounded>
-            <v-card-text>
-              <p class="metric-label">{{ metric.label }}</p>
-              <p class="metric-value">{{ metric.value }}</p>
-              <p class="metric-note">{{ metric.note }}</p>
-            </v-card-text>
-          </v-card>
+          <MetricCard :label="metric.label" :value="metric.value" :note="metric.note" />
         </v-col>
       </v-row>
 
@@ -64,6 +58,8 @@
 </template>
 
 <script setup lang="ts">
+import MetricCard from '../components/MetricCard.vue';
+
 const metrics = [
   { label: 'Shipments Today', value: '1,248', note: '+4.2% vs yesterday' },
   { label: 'On-Time Delivery', value: '92.7%', note: 'Stable week-over-week' },
